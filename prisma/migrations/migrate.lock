@@ -1,0 +1,12 @@
+# IF THERE'S A GIT CONFLICT IN THIS FILE, DON'T SOLVE IT MANUALLY!
+# INSTEAD EXECUTE `prisma migrate fix`
+# Prisma Migrate lockfile v1
+# Read more about conflict resolution here: TODO
+
+20200404231107-init
+20200405001043-debug
+20200405002045-add-company-to-user
+20200405002515-debug-company
+20200405003430-again
+20200405004828-again-again
+20200405005100-company-lat-long-to-float

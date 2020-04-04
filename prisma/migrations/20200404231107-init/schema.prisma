@@ -1,0 +1,42 @@
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id               String   @default(uuid()) @id
+  instagram        String   @unique
+  profile          Profile?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  subscribedOffers Offer[]  @relation(references: [id])
+}
+
+model Profile {
+  id   String @default(uuid()) @id
+  name String
+  user User   @relation(references: [id])
+}
+
+model Company {
+  id        String  @default(uuid()) @id
+  name      String  @unique
+  longitude Int
+  latitude  Int
+  offers    Offer[]
+}
+
+model Offer {
+  id          String   @default(uuid()) @id
+  description String
+  discount    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  limitTime   DateTime
+  company     Company  @relation(references: [id])
+  subscribers User[]   @relation(references: [id])
+}

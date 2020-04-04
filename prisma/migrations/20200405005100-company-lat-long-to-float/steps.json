@@ -1,0 +1,17 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Company",
+      "field": "longitude",
+      "type": "Float"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Company",
+      "field": "latitude",
+      "type": "Float"
+    }
+  ]
+}
